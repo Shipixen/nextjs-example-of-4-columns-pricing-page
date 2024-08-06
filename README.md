@@ -4,9 +4,57 @@
 #### Example of 4-columns pricing page
 See how to use the pricing page component to add 4 pricing plans.
 
+## How to add a 4-column pricing page
+
+Add a new tier `data/config/pricingData.tsx`
+
+```tsx
+// ...
+
+export const pricingTiers: PricingTier[] = [
+  // ...add a new pricing tier
+  {
+    name: 'Pro Max',
+    id: '2',
+    href: '/subscribe',
+    price: { '1': '$4.99', '2': '$59.99' },
+    discountPrice: { '1': '', '2': '' },
+    description: `Add some more power and flexibility.`,
+    features: [
+      `All in the pro plan plus`,
+      `File versioning`,
+      `Advanced user permissions`,
+    ],
+    featured: false,
+    highlighted: true,
+    soldOut: false,
+    cta: `Get started`,
+  },
+  // ...
+];
+```
+
+Handle the 4-tier layout in `app/pricing/page.tsx`. Add a new condition for the 4-column layout: `tiers.length === 4 ? 'lg:grid-cols-2 xl:grid-cols-4' : ''`.
+
+```tsx
+// ...
+    <div
+      className={cn(
+        'isolate mx-auto mt-4 mb-28 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none',
+        tiers.length === 2 ? 'lg:grid-cols-2' : '',
+        tiers.length === 3 ? 'lg:grid-cols-3' : '',
+        tiers.length === 4 ? 'lg:grid-cols-2 xl:grid-cols-4' : '',
+      )}
+    >
+// ...
+```
+
+-------------
+
 > This website was generated with [shipixen.com](https://shipixen.com).
 > For more documentation, visit [the shipixen Docs](https://shipixen.com/boilerplate-documentation).
 
+- [How to add a 4-column pricing page](#how-to-add-a-4-column-pricing-page)
 - [Installation](#installation)
 - [Development](#development)
 - [Build](#build)

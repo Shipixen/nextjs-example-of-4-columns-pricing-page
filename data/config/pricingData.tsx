@@ -3,36 +3,78 @@ import {
   PricingTierFrequency,
 } from '@/data/config/pricingDataInterface';
 
+export const pricingFrequencies: PricingTierFrequency[] = [
+  { id: '1', value: '1', label: 'Monthly', priceSuffix: '/month' },
+  { id: '2', value: '2', label: 'Annually', priceSuffix: '/year' },
+];
+
 export const pricingTiers: PricingTier[] = [
   {
     name: 'Free',
-    id: 'tier-1',
+    id: '0',
     href: '/subscribe',
-    discountPrice: { '1': '', '2': '' },
     price: { '1': '$0', '2': '$0' },
-    description: 'Get all goodies for free, no credit card required.',
+    discountPrice: { '1': '', '2': '' },
+    description: `Get all goodies for free, no credit card required.`,
     features: [
-      'Multi-platform compatibility',
-      'Real-time notification system',
-      'Advanced user permissions',
+      `Multi-platform compatibility`,
+      `Real-time notification system`,
+      `Advanced user permissions`,
     ],
     featured: false,
     highlighted: false,
-    cta: 'Sign up',
-  },
-];
-
-export const pricingFrequencies: PricingTierFrequency[] = [
-  {
-    id: 'e42b9bc0-19a7-4e29-9317-1bb1a17e1960',
-    value: '1',
-    label: 'Monthly',
-    priceSuffix: '/month',
+    soldOut: false,
+    cta: `Sign up`,
   },
   {
-    id: '274b015e-9f86-4c1f-808f-0e94cb7e9512',
-    value: '2',
-    label: 'Annually',
-    priceSuffix: '/year',
+    name: 'Pro',
+    id: '1',
+    href: '/subscribe',
+    price: { '1': '$3.99', '2': '$49.99' },
+    discountPrice: { '1': '', '2': '' },
+    description: `When you grow, need more power and flexibility.`,
+    features: [
+      `All in the free plan plus`,
+      `Customizable templates`,
+      `Integration with third-party apps`,
+    ],
+    featured: false,
+    highlighted: true,
+    soldOut: false,
+    cta: `Get started`,
+  },
+  {
+    name: 'Pro Max',
+    id: '2',
+    href: '/subscribe',
+    price: { '1': '$4.99', '2': '$59.99' },
+    discountPrice: { '1': '', '2': '' },
+    description: `Add some more power and flexibility.`,
+    features: [
+      `All in the pro plan plus`,
+      `File versioning`,
+      `Advanced user permissions`,
+    ],
+    featured: false,
+    highlighted: true,
+    soldOut: false,
+    cta: `Get started`,
+  },
+  {
+    name: 'Scaler',
+    id: '3',
+    href: '/contact-us',
+    price: { '1': '$14.99', '2': '$179.88' },
+    discountPrice: { '1': '', '2': '' },
+    description: `When you grow, need more power and flexibility.`,
+    features: [
+      `All in the pro plan plus`,
+      `Priority support`,
+      `Enterprise-grade security`,
+    ],
+    featured: true,
+    highlighted: false,
+    soldOut: false,
+    cta: `Get started`,
   },
 ];
