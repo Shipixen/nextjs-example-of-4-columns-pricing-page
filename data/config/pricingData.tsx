@@ -49,7 +49,7 @@ export const pricingTiers: PricingTier[] = [
     href: '/subscribe',
     price: { '1': '$4.99', '2': '$59.99' },
     discountPrice: { '1': '', '2': '' },
-    description: `Add some more power and flexibility.`,
+    description: `Add the maximum amount of power and flexibility.`,
     features: [
       `All in the pro plan plus`,
       `File versioning`,

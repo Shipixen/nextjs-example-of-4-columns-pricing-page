@@ -4,9 +4,11 @@
 #### Example of 4-columns pricing page
 See how to use the pricing page component to add 4 pricing plans.
 
+[Live Preview](https://example-of-4-columns-pricing-page.vercel.app/pricing)
+
 ## How to add a 4-column pricing page
 
-Add a new tier `data/config/pricingData.tsx`
+1. Add a new tier `data/config/pricingData.tsx`
 
 ```tsx
 // ...
@@ -19,7 +21,7 @@ export const pricingTiers: PricingTier[] = [
     href: '/subscribe',
     price: { '1': '$4.99', '2': '$59.99' },
     discountPrice: { '1': '', '2': '' },
-    description: `Add some more power and flexibility.`,
+    description: `Add the maximum amount of power and flexibility.`,
     features: [
       `All in the pro plan plus`,
       `File versioning`,
@@ -34,7 +36,7 @@ export const pricingTiers: PricingTier[] = [
 ];
 ```
 
-Handle the 4-tier layout in `app/pricing/page.tsx`. Add a new condition for the 4-column layout: `tiers.length === 4 ? 'lg:grid-cols-2 xl:grid-cols-4' : ''`.
+2. Handle the 4-tier layout in `app/pricing/page.tsx`. Add a new condition for the 4-column layout: `tiers.length === 4 ? 'lg:grid-cols-2 xl:grid-cols-4' : ''`.
 
 ```tsx
 // ...
